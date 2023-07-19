@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="./static/style.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+    
+        //dataset
+      const deviceInfo = {
+          "Device1":{
+            "DeviceName":'ProjectorA',
+            "State":true,
+          },
+          "Device2":{
+            "DeviceName":'ProjectorA',
+            "State":true,
+          },
+          "Device3":{
+            "DeviceName":'ProjectorA',
+            "State":true,
+          },
+          "Device4":{
+            "DeviceName":'ProjectorA',
+            "State":true,
+          }
+  
+        }
+
+      const listItems = Object.keys(deviceInfo).map((key) => (
+        <li key={key}>
+          {deviceInfo[key].DeviceName} - {deviceInfo[key].State ? 'ON' : 'OFF'}
+        </li>
+      ));
+
+      function DeviceList(){
+        return(
+          <ul>{listItems}</ul>
+        )
+      }
+
+      function MyApp() {
+        return(
+
+        <div>
+          <h1>Hello, world!</h1>
+          <DeviceList />
+        </div>
+        );
+      }
+
+      const container = document.getElementById('root');
+      const root = ReactDOM.createRoot(container);
+      root.render(<MyApp />);
+
+    </script>
+
+  </body>
+</html>

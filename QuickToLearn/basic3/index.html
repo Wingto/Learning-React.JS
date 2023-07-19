@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="./static/style.css">
+  </head>
+  <body>
+    <div id="root">
+      <h1>state</h1>
+    </div>
+    <div id="dot">
+      <h1>msg</h1>
+    </div>
+    <script type="text/babel" >
+
+    function StateApp(){
+      const StateMSG = {
+        MsgColor:{
+          backgroundColor: 'green',
+        }
+      }
+      return 
+      (
+      <div className='dot' style = {StateMSG.MsgColor}>
+       state 
+      </div>
+      );
+    }
+
+
+    function SwitchViz({SwitchState}){
+      return(
+        <div>
+          {SwitchState ? '✔️' :'❌'}
+          </div>
+      )
+    }
+    function Swtich(){
+     
+      const [Switch, setSwitch] = React.useState(false);
+      const handleClick = () => {
+        setSwitch(!Switch)
+      };
+
+      return(
+     <>
+     <button onClick= {handleClick} className='ctrlButton'>
+       
+       {Switch ? 'ON' : 'OFF'}
+     </button>
+     </>
+
+
+
+      );
+    }
+    function Profile(){
+    //https://getemoji.com/
+    return (
+     
+    <div className = "container">
+      <div className = "Bar">
+       <div>
+        <SwitchViz SwitchState={false} />
+            
+        </div>
+
+        <div>
+          <p  className="item">ProjectorB
+             <span>😀😏
+              </span>
+              <Swtich />
+          </p>
+        </div>
+      </div>
+        
+      <div className = "Bar">
+            <p className="item">ProjectorC
+             <span >😀😏
+              </span>
+              <Swtich />
+            </p>
+        </div>
+        <div className = "Bar">
+            <p className="item">ProjectorB
+             <span >😀😏
+              </span>
+              <Swtich />
+            </p>
+        </div>
+      </div>
+        
+    )
+    }
+    function MyApp() {
+      return(
+
+      <div>
+        <h1>DeviceStates</h1>
+        <Profile />
+       
+        </div>
+
+      );
+
+    }
+    
+    
+    
+    const container = document.getElementById('root');
+    const root = ReactDOM.createRoot(container);
+    root.render(<MyApp />);
+    const container1 = document.getElementById('dot');
+    const root1 = ReactDOM.createRoot(container1);
+    root1.render(<StateApp />);
+
+    </script>
+  
+    <!--
+      Note: this page is a great way to try React but it's not suitable for production.
+      It slowly compiles JSX with Babel in the browser and uses a large development build of React.
+
+      Read this page for starting a new React project with JSX:
+      https://react.dev/learn/start-a-new-react-project
+
+      Read this page for adding React with JSX to an existing project:
+      https://react.dev/learn/add-react-to-an-existing-project
+    -->
+  </body>
+</html>

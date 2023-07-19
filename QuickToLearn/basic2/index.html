@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+
+
+
+<body>
+    <div id="root">  React component</div>
+
+    <script type="text/babel" src="./static/main.js">
+
+      const container = document.getElementById('root');
+      /*HTML页面中获取具有"id"为"root"的元素，赋值给变量container*/
+
+      const root = ReactDOM.createRoot(container);
+      /*创建了一个根，名为root，将container作为参数传入*/
+
+      root.render(<MyApp />);
+    </script>
+  
+</body>
+</html>

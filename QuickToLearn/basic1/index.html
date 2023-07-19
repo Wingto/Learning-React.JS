@@ -17,12 +17,11 @@
    <div id="root">??</div>
 
     <div id ="external"> I'm try</div>
-   <script type="text/bable" src="static/index.js">
 
 
-   </script>
+    <script type="text/babel" src="static/component/App.js">
 
- 
+    </script>
     <!-- Component -->
     <script type="text/babel">
       function Switch() {
@@ -36,12 +35,11 @@
           <div>
             <h1>Counters that update separately</h1>
             <button onClick={handleClick}>Clicked {count} times</button>
-            <button onClick={handleClick}>Clicked {count} times</button>
           </div>
         );
       }
 
-      ReactDOM.render(<Switch />, document.getElementById('external'));
+      ReactDOM.render(<Switch />, document.getElementById('root'));
     </script>
 
 

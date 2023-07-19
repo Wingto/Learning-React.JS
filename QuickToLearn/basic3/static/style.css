@@ -1,0 +1,52 @@
+
+.container{
+
+background-color: rgba(239, 180, 107, 0.242);
+/*container set into the center*/
+
+justify-content: center;
+flex-wrap: wrap;
+border-radius: 8px;
+
+
+}
+.Bar{
+/* bar make justify center and flexibity,but do not at the same row, need to set seperate rows*/
+display: flex;
+justify-content: center;
+align-items: center; 
+height: 100px;
+border: 3px solid rgb(0, 0, 0);
+border-radius: 20px;
+   
+}
+.item::before{
+   
+
+    width: 10px;
+    display: inline-block;
+  
+}
+
+.ctrlButton{
+    border-radius: 4px;
+    border: 1px solid rgb(0, 0, 0);
+    width: 50%;
+    height: 50%;
+    display: flex;
+}
+.ctrlButton:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+
+  
+  }
+
+.dot{
+
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
