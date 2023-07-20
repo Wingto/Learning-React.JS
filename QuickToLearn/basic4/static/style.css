@@ -1,0 +1,28 @@
+.deviceImage {
+    width: 10%;
+    height: 10%;
+    border-radius: 5px;
+    background-position: center;
+}
+
+body{
+    background-color: black;
+}
+
+.title{
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.deviceDetail{
+    color: rgb(179, 179, 179);
+    font-size: 20px;
+    font-weight: lighter;
+    text-align: left;
+    margin-bottom: 10px;
+    align-items: center;
+}
