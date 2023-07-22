@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Hello World</title>
+    <title>HookPractice</title>
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 
@@ -13,13 +13,38 @@
     <div id="root"></div>
     <script type="text/babel">
     
-      function MyApp() {
-        return <h1>Hello, world!</h1>;
+      function MyHookApp() {
+        const [count, setCount] = React.useState(0);
+       
+
+        //--------------------------------------------
+        // useEffect(()=>{},[]);
+        // 
+        // useEffect(setup , dependencies)
+        //
+        //  <setup: the code that we want to run, optional return function >
+        //  ,
+        //  
+        //  <dependencies: the dependency array>
+        //--------------------------------------------
+
+        React.useEffect(
+          () =>{
+            window.alert('hook')
+          },[]
+        );
+
+        return(
+          <div>
+            <p>you clicked {count} times</p>
+            <button onClick={()=>setCount(count+1)}>click me</button>
+          </div>
+        )
       }
 
       const container = document.getElementById('root');
       const root = ReactDOM.createRoot(container);
-      root.render(<MyApp />);
+      root.render(<MyHookApp />);
 
     </script>
     <!--
