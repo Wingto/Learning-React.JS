@@ -23,10 +23,11 @@
         
         React.useEffect(
           ()=>{
-            axios.get('http://192.168.1.117:8000/new/test1/DeviceViewSet/')
+            axios.get('https://reqres.in/api/users?page=2 ')
+                //https://reqres.in/api/users?page=2                
             .then((res) => {
-              console.log(res.data);
-              setData(res.data);
+              console.log(res.data.data);
+              setData(res.data.data);
 
             })
 
@@ -35,26 +36,22 @@
 
            // console.log(data)
           },[]
-
-
         )
         return (
 
           <div>
             
             <h1>HyCloud</h1>
-            <ul>
-              
-              
+            <ul>                      
                 {data.map((item, index) => (
-          <li key={index}>
-            Device Name: {item.dev_name} <br />
-            Device IP: {item.dev_ip} <br />
-            Device Port: {item.dev_port} <br />
-            Connection Status: {item.connect_stat}
-            <br />
-            <br />
-          </li>
+                    <li key={index}>
+                      Device Name: {item.dev_name} <br />
+                      Device IP: {item.dev_ip} <br />
+                      Device Port: {item.dev_port} <br />
+                      Connection Status: {item.connect_stat}
+                            <br />
+                            <br />
+                    </li>
         ))}
               </ul>
             </div>

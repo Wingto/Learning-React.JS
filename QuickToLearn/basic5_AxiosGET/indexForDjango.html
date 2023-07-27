@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+   // import axios from 'axios';
+
+      function MyApp() {
+        const [data, setData] = React.useState([]);
+        
+        React.useEffect(
+          ()=>{
+            axios.get('http://192.168.124.15:8000/new/test1/DeviceViewSet/')
+                //https://reqres.in/api/users?page=2         
+/*           
+[
+    {
+        "dev_name": "PC",
+        "dev_ip": "192.168.1.112",
+        "dev_port": "8000",
+        "connect_stat": "connect"
+    },
+    {
+        "dev_name": "Projector",
+        "dev_ip": "192.168.10.100",
+        "dev_port": "1024",
+        "connect_stat": "connect"
+    }
+]
+*/
+            .then((res) => {
+              console.log(res.data);
+              setData(res.data);
+
+            })
+
+            .catch(err => console.log(err));
+
+
+           // console.log(data)
+          },[]
+
+
+        )
+        return (
+
+          <div>
+            
+            <h1>HyCloud</h1>
+            <ul>
+              
+              
+                {data.map((item, index) => (
+          <li key={index}>
+            Device Name: {item.dev_name} <br />
+            Device IP: {item.dev_ip} <br />
+            Device Port: {item.dev_port} <br />
+            Connection Status: {item.connect_stat}
+            <br />
+            <br />
+          </li>
+        ))}
+              </ul>
+            </div>
+        );
+      }
+
+      const container = document.getElementById('root');
+      const root = ReactDOM.createRoot(container);
+      root.render(<MyApp />);
+
+    </script>
+    <!--
+      Note: this page is a great way to try React but it's not suitable for production.
+      It slowly compiles JSX with Babel in the browser and uses a large development build of React.
+
+      Read this page for starting a new React project with JSX:
+      https://react.dev/learn/start-a-new-react-project
+
+      Read this page for adding React with JSX to an existing project:
+      https://react.dev/learn/add-react-to-an-existing-project
+    -->
+  </body>
+</html>
