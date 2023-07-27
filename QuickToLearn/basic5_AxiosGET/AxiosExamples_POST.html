@@ -71,7 +71,7 @@
 
         const handleSubmit = (msg) =>{
           msg.preventDefault();
-          axios.post('https://reqres.in/api/users/2',{
+          axios.put('https://reqres.in/api/users/2',{
             'name' : name,
             'job' : job,
           }
