@@ -26,7 +26,9 @@
             axios.get('https://reqres.in/api/users?page=2 ')
                 //https://reqres.in/api/users?page=2                
             .then((res) => {
-              console.log(res.data.data);
+              console.log("response for data:",res);
+              console.log("response for data:",res.data);
+              console.log("response for data:",res.data.data);
               setData(res.data.data);
 
             })
@@ -41,14 +43,14 @@
 
           <div>
             
-            <h1>HyCloud</h1>
+            <h1>API TEST</h1>
             <ul>                      
                 {data.map((item, index) => (
                     <li key={index}>
-                      Device Name: {item.dev_name} <br />
-                      Device IP: {item.dev_ip} <br />
-                      Device Port: {item.dev_port} <br />
-                      Connection Status: {item.connect_stat}
+                      ID: {item.id} <br />
+                      email: {item.email} <br />
+                      FirstName: {item.first_name} <br />
+                      LastName: {item.last_name}
                             <br />
                             <br />
                     </li>
