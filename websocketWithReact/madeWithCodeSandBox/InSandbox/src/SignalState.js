@@ -25,8 +25,8 @@ export default function SignalSx({ color }) {
     >
       <Box
         sx={{
-          width: 40,
-          height: 40,
+          width: 20,
+          height: 20,
           bgcolor: "primary.main",
           borderRadius: "50%",
         }}
