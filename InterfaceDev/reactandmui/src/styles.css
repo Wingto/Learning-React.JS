@@ -1,0 +1,12 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.HomeNav {
+  display: flex;
+  /* Center align the child elements vertically */
+  align-items: center;
+  align-content: center;
+  /* Space the child elements evenly with space between */
+  justify-content: space-between;
+}
